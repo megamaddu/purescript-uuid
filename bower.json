@@ -1,0 +1,24 @@
+{
+  "name": "purescript-uuid",
+  "version": "1.0.0",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spicydonuts/purescript-uuid.git"
+  },
+  "dependencies": {
+    "purescript-eff": "~0.1.2"
+  },
+  "devDependencies": {
+    "purescript-console": "^0.1.0",
+    "purescript-spec": "~0.7.2"
+  }
+}
