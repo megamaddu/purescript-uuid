@@ -25,7 +25,7 @@ genUUID = getUUIDImpl >>= pure <<< UUID
 foreign import validateV4UUID :: String -> Boolean
 
 -- | Validates a String as a v4 UUID
-parseUUID :: forall e. String -> Maybe UUID
+parseUUID :: String -> Maybe UUID
 parseUUID str = case validateV4UUID str of
   true -> Just $ UUID str
   _    -> Nothing
