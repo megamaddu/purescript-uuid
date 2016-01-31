@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "uuid-validate": "0.0.2"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
