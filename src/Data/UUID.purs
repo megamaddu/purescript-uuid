@@ -5,12 +5,10 @@ module Data.UUID
   , parseUUID
   ) where
 
-import Prelude
-import Control.Monad.Eff
-import Data.Maybe
+import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
+import Control.Monad.Eff (Eff)
+import Data.Maybe (Maybe(Nothing, Just))
 
--- | Represents a UUID String.
--- | Most UUID instances defer to String
 newtype UUID = UUID String
 
 -- | The effect of generating a new UUID.
