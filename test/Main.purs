@@ -1,27 +1,25 @@
 module Test.Main where
 
 import Prelude
-import Control.Monad.Eff
-import Control.Monad.Eff.Console
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.Class (liftEff)
+import Control.Monad.Eff.Console (CONSOLE)
+import Data.Maybe (Maybe(..), fromJust)
+import Data.String (length)
+import Data.UUID (parseUUID, genUUID, GENUUID)
+import Node.Process (PROCESS)
+import Partial.Unsafe (unsafePartial)
+import Test.Spec (it, describe)
+import Test.Spec.Assertions (shouldEqual)
+import Test.Spec.Reporter.Console (consoleReporter)
+import Test.Spec.Runner (run)
 
-import Control.Monad.Aff
-
-import Data.Maybe
-import Data.Maybe.Unsafe
-import Data.String
-import Data.UUID
-
-import Test.Spec
-import Test.Spec.Assertions
-import Test.Spec.Runner
-import Test.Spec.Reporter.Console
-
-main :: forall e. Eff (uuid :: GENUUID, console :: CONSOLE, process :: Process | e) Unit
-main = run [consoleReporter] do
+main :: forall e. Eff (uuid :: GENUUID, console :: CONSOLE, process :: PROCESS | e) Unit
+main = unsafePartial $ run [consoleReporter] do
   describe "Data.UUID" do
     it "`genUUID` returns a uuid" do
-      uuid <- liftEff' genUUID
-      (length <<< show) uuid `shouldEqual` 44
+      uuid <- liftEff genUUID
+      (length <<< show) uuid `shouldEqual` 36
 
     it "`parseUUID` parses a valid uuid as Just UUID" do
       let uuidStr = "d0778cf2-3a4c-42ef-acbd-1269b6bec204"
