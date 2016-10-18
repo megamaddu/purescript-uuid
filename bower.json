@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git://github.com/spicydonuts/purescript-uuid.git"
   },
+  "license": "MIT",
   "dependencies": {
     "purescript-eff": "^1.0.0"
   },
