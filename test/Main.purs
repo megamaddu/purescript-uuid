@@ -1,9 +1,11 @@
 module Test.Main where
 
 import Prelude
+import Control.Monad.Aff.AVar (AVAR)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Class (liftEff)
 import Control.Monad.Eff.Console (CONSOLE)
+import Control.Monad.Eff.Timer (TIMER)
 import Data.Maybe (Maybe(..), fromJust)
 import Data.String (length)
 import Data.UUID (parseUUID, genUUID, GENUUID)
@@ -14,7 +16,7 @@ import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
 import Test.Spec.Runner (run)
 
-main :: forall e. Eff (uuid :: GENUUID, console :: CONSOLE, process :: PROCESS | e) Unit
+main :: forall e. Eff (uuid :: GENUUID, console :: CONSOLE, process :: PROCESS, avar :: AVAR, timer :: TIMER | e) Unit
 main = unsafePartial $ run [consoleReporter] do
   describe "Data.UUID" do
     it "`genUUID` returns a uuid" do
