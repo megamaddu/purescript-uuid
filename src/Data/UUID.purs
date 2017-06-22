@@ -6,13 +6,13 @@ module Data.UUID
   ) where
 
 import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
-import Control.Monad.Eff (Eff)
+import Control.Monad.Eff (Eff, kind Effect)
 import Data.Maybe (Maybe(Nothing, Just))
 
 newtype UUID = UUID String
 
 -- | The effect of generating a new UUID.
-foreign import data GENUUID :: !
+foreign import data GENUUID :: Effect
 
 foreign import getUUIDImpl :: forall e. Eff (uuid :: GENUUID | e) String
 
