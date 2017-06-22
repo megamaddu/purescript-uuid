@@ -1,6 +1,5 @@
 {
   "name": "purescript-uuid",
-  "version": "2.0.1",
   "moduleType": [
     "node"
   ],
@@ -16,10 +15,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "purescript-eff": "^2.0.0"
+    "purescript-eff": "3.x"
   },
   "devDependencies": {
-    "purescript-console": "^2.0.0",
-    "purescript-spec": "~0.10.0"
+    "purescript-console": "3.x",
+    "purescript-spec": "1.x"
   }
 }
