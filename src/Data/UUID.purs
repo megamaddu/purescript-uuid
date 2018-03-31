@@ -5,11 +5,13 @@ module Data.UUID
   , parseUUID
   ) where
 
-import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
 import Control.Monad.Eff (Eff, kind Effect)
 import Data.Maybe (Maybe(Nothing, Just))
+import Data.Newtype (class Newtype)
+import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
 
 newtype UUID = UUID String
+derive instance newtypeUUID ∷ Newtype UUID _
 
 -- | The effect of generating a new UUID.
 foreign import data GENUUID :: Effect
