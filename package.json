@@ -7,7 +7,6 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "bower install",
     "build": "pulp build",
     "build:watch": "pulp -w build",
     "test": "pulp test",
