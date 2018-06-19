@@ -1,5 +1,6 @@
 {
   "name": "purescript-uuid",
+  "version": "3.0.0",
   "moduleType": [
     "node"
   ],
