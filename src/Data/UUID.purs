@@ -1,23 +1,19 @@
 module Data.UUID
   ( UUID()
-  , GENUUID()
   , genUUID
   , parseUUID
   ) where
 
-import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
-import Control.Monad.Eff (Eff, kind Effect)
 import Data.Maybe (Maybe(Nothing, Just))
+import Effect (Effect)
+import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
 
 newtype UUID = UUID String
 
--- | The effect of generating a new UUID.
-foreign import data GENUUID :: Effect
-
-foreign import getUUIDImpl :: forall e. Eff (uuid :: GENUUID | e) String
+foreign import getUUIDImpl :: Effect String
 
 -- | Generates a v4 UUID
-genUUID :: forall e. Eff (uuid :: GENUUID | e) UUID
+genUUID :: Effect UUID
 genUUID = getUUIDImpl >>= pure <<< UUID
 
 foreign import validateV4UUID :: String -> Boolean
