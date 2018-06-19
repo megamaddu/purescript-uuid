@@ -15,10 +15,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "purescript-eff": "3.x"
+    "purescript-effect": "2.0.0"
   },
   "devDependencies": {
-    "purescript-console": "3.x",
-    "purescript-spec": "1.x"
+    "purescript-console": "4.1.0",
+    "purescript-spec": "3.0.0"
   }
 }
