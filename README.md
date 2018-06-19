@@ -1,4 +1,4 @@
-#purescript-uuid
+# purescript-uuid
 
 [![Build Status](https://travis-ci.org/spicydonuts/purescript-uuid.svg?branch=master)](https://travis-ci.org/spicydonuts/purescript-uuid)
 
