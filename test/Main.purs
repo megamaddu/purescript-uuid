@@ -4,8 +4,9 @@ import Prelude
 
 import Data.Maybe (Maybe(..), fromJust)
 import Data.String (length)
-import Data.UUID (genUUID, parseUUID)
+import Data.UUID (genUUID, genv3UUID, genv5UUID, parseUUID)
 import Effect (Effect)
+import Effect.Class (liftEffect)
 import Effect.Unsafe (unsafePerformEffect)
 import Partial.Unsafe (unsafePartial)
 import Test.Spec (it, describe)
@@ -15,11 +16,21 @@ import Test.Spec.Runner (run)
 
 main :: Effect Unit
 main = run [consoleReporter] do
-  
+
   describe "UUID" do
 
     it "`genUUID` returns a uuid" do
       let uuid = unsafePerformEffect genUUID
+      (length <<< show) uuid `shouldEqual` 36
+
+    it "`genv3UUID` returns a uuid" do
+      namespace <- liftEffect genUUID
+      let uuid = genv3UUID "foo" namespace
+      (length <<< show) uuid `shouldEqual` 36
+
+    it "`genv5UUID` returns a uuid" do
+      namespace <- liftEffect genUUID
+      let uuid = genv5UUID "foo" namespace
       (length <<< show) uuid `shouldEqual` 36
 
     it "`parseUUID` parses a valid uuid as Just UUID" do
@@ -31,4 +42,3 @@ main = run [consoleReporter] do
       let uuidStr = "foo"
           uuid = parseUUID uuidStr
       Nothing `shouldEqual` uuid
-

@@ -2,11 +2,14 @@ module Data.UUID
   ( UUID()
   , genUUID
   , parseUUID
+  , genv3UUID
+  , genv5UUID
   ) where
 
 import Data.Maybe (Maybe(Nothing, Just))
+import Debug.Trace (spy)
 import Effect (Effect)
-import Prelude (class Ord, class Eq, class Show, compare, (==), ($), pure, (<<<), (>>=))
+import Prelude (class Eq, class Ord, class Show, pure, ($), (<<<), (>>=))
 
 newtype UUID = UUID String
 
@@ -24,11 +27,18 @@ parseUUID str = case validateV4UUID str of
   true -> Just $ UUID str
   _    -> Nothing
 
+foreign import getUUID3Impl :: String -> String -> String
+
+genv3UUID :: String -> UUID -> UUID
+genv3UUID s (UUID n) = UUID $ getUUID3Impl s n
+
+foreign import getUUID5Impl :: String -> String -> String
+
+genv5UUID :: String -> UUID -> UUID
+genv5UUID s (UUID n) = UUID (getUUID5Impl s n)
+
 instance showUUID :: Show UUID where
   show (UUID uuid) = uuid
 
-instance eqUUID :: Eq UUID where
-  eq (UUID uA) (UUID uB) = uA == uB
-
-instance ordUUID :: Ord UUID where
-  compare (UUID uA) (UUID uB) = compare uA uB
+derive instance eqUUID :: Eq UUID
+derive instance ordUUID :: Ord UUID
