@@ -7,7 +7,6 @@ module Data.UUID
   ) where
 
 import Data.Maybe (Maybe(Nothing, Just))
-import Debug.Trace (spy)
 import Effect (Effect)
 import Prelude (class Eq, class Ord, class Show, pure, ($), (<<<), (>>=))
 

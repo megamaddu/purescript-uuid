@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "bower": "^1.8.0",
-    "eslint": "^4.0.0",
+    "eslint": "5.9.0",
     "eslint-config-semistandard": "^11.0.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-promise": "^3.5.0",
