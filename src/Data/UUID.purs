@@ -1,5 +1,6 @@
 module Data.UUID
   ( UUID()
+  , emptyUUID
   , genUUID
   , parseUUID
   , genv3UUID
@@ -11,6 +12,9 @@ import Effect (Effect)
 import Prelude (class Eq, class Ord, class Show, pure, ($), (<<<), (>>=))
 
 newtype UUID = UUID String
+
+emptyUUID :: UUID
+emptyUUID = UUID "00000000-0000-0000-0000-000000000000"
 
 foreign import getUUIDImpl :: Effect String
 
