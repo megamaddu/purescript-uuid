@@ -1,17 +1,19 @@
 module Data.UUID
-  ( UUID()
+  ( UUID
   , emptyUUID
   , genUUID
   , parseUUID
   , genv3UUID
   , genv5UUID
+  , toString
   ) where
 
+import Prelude
 import Data.Maybe (Maybe(Nothing, Just))
 import Effect (Effect)
-import Prelude (class Eq, class Ord, class Show, pure, ($), (<<<), (>>=))
 
-newtype UUID = UUID String
+newtype UUID
+  = UUID String
 
 emptyUUID :: UUID
 emptyUUID = UUID "00000000-0000-0000-0000-000000000000"
@@ -28,7 +30,7 @@ foreign import validateV4UUID :: String -> Boolean
 parseUUID :: String -> Maybe UUID
 parseUUID str = case validateV4UUID str of
   true -> Just $ UUID str
-  _    -> Nothing
+  _ -> Nothing
 
 foreign import getUUID3Impl :: String -> String -> String
 
@@ -41,7 +43,11 @@ genv5UUID :: String -> UUID -> UUID
 genv5UUID s (UUID n) = UUID (getUUID5Impl s n)
 
 instance showUUID :: Show UUID where
-  show (UUID uuid) = uuid
+  show (UUID uuid) = "(UUID " <> uuid <> ")"
 
 derive instance eqUUID :: Eq UUID
+
 derive instance ordUUID :: Ord UUID
+
+toString :: UUID -> String
+toString (UUID uuid) = uuid
