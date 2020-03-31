@@ -9,7 +9,8 @@
   "license": "MIT",
   "dependencies": {
     "purescript-effect": "^2.0.0",
-    "purescript-maybe": "^4.0.1"
+    "purescript-maybe": "^4.0.1",
+    "purescript-foreign-generic": "^10.0.0"
   },
   "devDependencies": {
     "purescript-console": "^4.1.0",
