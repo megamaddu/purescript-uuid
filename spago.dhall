@@ -4,6 +4,10 @@ You can edit this file as you like.
 -}
 { name =
     "uuid"
+, license =
+    "MIT"
+, repository =
+    "https://github.com/spicydonuts/purescript-uuid.git"
 , dependencies =
     [ "console"
     , "effect"

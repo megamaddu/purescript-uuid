@@ -1,19 +1,23 @@
 {
-  "name": "purescript-uuid",
-  "moduleType": ["node"],
-  "ignore": ["**/.*", "node_modules", "bower_components", "output"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spicydonuts/purescript-uuid.git"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "purescript-effect": "^2.0.0",
-    "purescript-maybe": "^4.0.1",
-    "purescript-foreign-generic": "^10.0.0"
-  },
-  "devDependencies": {
-    "purescript-console": "^4.1.0",
-    "purescript-spec": "^4.0.0"
-  }
+    "name": "purescript-uuid",
+    "license": [
+        "MIT"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/spicydonuts/purescript-uuid.git"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "output"
+    ],
+    "dependencies": {
+        "purescript-console": "^v4.4.0",
+        "purescript-effect": "^v2.0.1",
+        "purescript-foreign-generic": "^v10.0.0",
+        "purescript-psci-support": "^v4.0.0",
+        "purescript-spec": "^v4.0.1"
+    }
 }
