@@ -13,9 +13,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spicydonuts/purescript-uuid"
+  },
   "dependencies": {
-    "uuid": "^3.4.0",
-    "uuid-validate": "0.0.3"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "bower": "^1.8.8",
