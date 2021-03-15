@@ -7,8 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "build": "spago build",
-    "test": "spago test"
+    "deps": "run-s deps:*",
+    "deps:spago": "spago install",
+    "deps:pulp": "bower install",
+    "build": "run-s build:*",
+    "build:spago": "spago build",
+    "build:pulp": "pulp build -o output-pulp",
+    "test": "spago test",
+    "clean": "rm -rf .spago bower_components output output-pulp node_modules .pulp-cache .psci_modules"
   },
   "keywords": [],
   "author": "",
@@ -18,12 +24,13 @@
     "url": "https://github.com/spicydonuts/purescript-uuid"
   },
   "dependencies": {
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "bower": "^1.8.8",
+    "bower": "^1.8.12",
+    "npm-run-all": "^4.1.5",
     "pulp": "^15.0.0",
     "purescript": "^0.14.0",
-    "spago": "^0.15.3"
+    "spago": "^0.19.1"
   }
 }

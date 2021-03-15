@@ -5,7 +5,8 @@ node_js: 10
 
 install:
   - npm ci
+  - npm run deps
 
 script:
-  - npx bower install
-  - npm -s test
+  - npm run build
+  - npm run test

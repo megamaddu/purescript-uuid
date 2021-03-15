@@ -14,10 +14,10 @@
         "output"
     ],
     "dependencies": {
-        "purescript-console": "^v4.4.0",
-        "purescript-effect": "^v2.0.1",
-        "purescript-foreign-generic": "^v10.0.0",
-        "purescript-psci-support": "^v4.0.0",
-        "purescript-spec": "^v4.0.1"
+        "purescript-console": "^v5.0.0",
+        "purescript-effect": "^v3.0.0",
+        "purescript-foreign-generic": "https://github.com/fsoikin/purescript-foreign-generic.git#purescript-0.14",
+        "purescript-psci-support": "^v5.0.0",
+        "purescript-spec": "^v5.0.0"
     }
 }

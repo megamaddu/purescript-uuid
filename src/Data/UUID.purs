@@ -11,7 +11,6 @@ module Data.UUID
 import Prelude
 import Control.Monad.Except.Trans (except)
 import Data.Either (note)
-import Data.Generic.Rep (class Generic)
 import Data.List.NonEmpty (singleton)
 import Data.Maybe (Maybe(Nothing, Just))
 import Effect (Effect)
@@ -58,8 +57,6 @@ derive instance ordUUID :: Ord UUID
 
 toString :: UUID -> String
 toString (UUID uuid) = uuid
-
-derive instance genericUUID :: Generic UUID _
 
 instance decodeUUID :: Decode UUID where
   decode x = Foreign.readString x >>=

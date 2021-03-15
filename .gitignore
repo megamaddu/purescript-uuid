@@ -2,7 +2,9 @@
 /node_modules/
 /.pulp-cache/
 /output/
+/output-pulp/
 /.psci*
 /src/.webpack.js
 .psc-ide-port
 /.spago/
+.purs-repl
