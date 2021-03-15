@@ -119,10 +119,24 @@ let additions =
 
 
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.13.8-20200724/packages.dhall sha256:bb941d30820a49345a0e88937094d2b9983d939c9fd3a46969b85ce44953d7d9
+      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210313/packages.dhall sha256:ba6368b31902aad206851fec930e89465440ebf5a1fe0391f8be396e2d2f1d87
 
 let overrides = {=}
 
-let additions = {=}
+let additions =
+      { foreign-generic =
+          { dependencies =
+            [ "effect"
+            , "foreign"
+            , "foreign-object"
+            , "ordered-collections"
+            , "exceptions"
+            , "record"
+            , "identity"
+            ]
+          , repo = "https://github.com/fsoikin/purescript-foreign-generic.git"
+          , version = "purescript-0.14"
+          }
+      }
 
-in  upstream // overrides // additions
+in  upstream ⫽ overrides ⫽ additions
