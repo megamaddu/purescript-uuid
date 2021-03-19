@@ -105,20 +105,6 @@ in  upstream
 -------------------------------
 -}
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210313/packages.dhall sha256:ba6368b31902aad206851fec930e89465440ebf5a1fe0391f8be396e2d2f1d87
+      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210318/packages.dhall sha256:98bbacd65191cef354ecbafa1610be13e183ee130491ab9c0ef6e3d606f781b5
 
 in  upstream
-
-  with foreign-generic =
-    { dependencies =
-      [ "effect"
-      , "foreign"
-      , "foreign-object"
-      , "ordered-collections"
-      , "exceptions"
-      , "record"
-      , "identity"
-      ]
-    , repo = "https://github.com/fsoikin/purescript-foreign-generic.git"
-    , version = "purescript-0.14"
-    }
