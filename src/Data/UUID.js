@@ -1,9 +1,7 @@
-'use strict';
-
 // module Data.UUID
 
 var mkV3UUID = null;
-exports.getUUID3Impl = function (str) {
+export const getUUID3Impl = function (str) {
   return function (namespace) {
     if (mkV3UUID === null) {
       var uuid = require('uuid');
@@ -14,7 +12,7 @@ exports.getUUID3Impl = function (str) {
 };
 
 var mkV4UUID = null;
-exports.getUUIDImpl = function () {
+export const getUUIDImpl = function () {
   if (mkV4UUID === null) {
     var uuid = require('uuid');
     mkV4UUID = uuid.v4;
@@ -23,7 +21,7 @@ exports.getUUIDImpl = function () {
 };
 
 var mkV5UUID = null;
-exports.getUUID5Impl = function (str) {
+export const getUUID5Impl = function (str) {
   return function (namespace) {
     if (mkV5UUID === null) {
       var uuid = require('uuid');
@@ -34,7 +32,7 @@ exports.getUUID5Impl = function (str) {
 };
 
 var validateUUID = null;
-exports.validateV4UUID = function (str) {
+export const validateV4UUID = function (str) {
   if (validateUUID === null) {
     var uuid = require('uuid');
     validateUUID = uuid.validate;
