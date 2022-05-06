@@ -7,12 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "deps": "run-s deps:*",
-    "deps:spago": "spago install",
-    "deps:pulp": "bower install",
-    "build": "run-s build:*",
-    "build:spago": "spago build",
-    "build:pulp": "pulp build -o output-pulp",
+    "deps": "spago install",
+    "build": "spago build",
     "test": "spago test",
     "clean": "rm -rf .spago bower_components output output-pulp node_modules .pulp-cache .psci_modules"
   },
