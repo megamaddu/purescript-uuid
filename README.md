@@ -1,6 +1,6 @@
 # purescript-uuid
 
-[![Build Status](https://travis-ci.org/spicydonuts/purescript-uuid.svg?branch=master)](https://travis-ci.org/spicydonuts/purescript-uuid)
+[![Build & Test](https://github.com/megamaddu/purescript-uuid/actions/workflows/node.js.yml/badge.svg)](https://github.com/megamaddu/purescript-uuid/actions/workflows/node.js.yml)
 
 Wrapper for the `uuid` npm package.
 This package is not installed automatically, as it comes from `npm`.
