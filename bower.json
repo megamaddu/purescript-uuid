@@ -14,10 +14,17 @@
         "output"
     ],
     "dependencies": {
-        "purescript-console": "^v5.0.0",
-        "purescript-effect": "^v3.0.0",
-        "purescript-foreign-generic": "^v11.0.0",
-        "purescript-psci-support": "^v5.0.0",
-        "purescript-spec": "^v5.0.0"
+        "purescript-aff": "^v7.0.0",
+        "purescript-effect": "^v4.0.0",
+        "purescript-either": "^v6.0.0",
+        "purescript-foreign": "^v7.0.0",
+        "purescript-foreign-generic": "https://github.com/working-group-purescript-es/purescript-foreign-generic.git#v0.15.0-updates",
+        "purescript-lists": "^v7.0.0",
+        "purescript-maybe": "^v6.0.0",
+        "purescript-partial": "^v4.0.0",
+        "purescript-prelude": "^v6.0.0",
+        "purescript-spec": "^v7.0.0",
+        "purescript-strings": "^v6.0.0",
+        "purescript-transformers": "^v6.0.0"
     }
 }
