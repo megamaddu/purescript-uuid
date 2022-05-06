@@ -9,11 +9,18 @@ You can edit this file as you like.
 , repository =
     "https://github.com/spicydonuts/purescript-uuid.git"
 , dependencies =
-    [ "console"
+    [ "prelude"
+    , "aff"
     , "effect"
-    , "psci-support"
-    , "spec"
+    , "either"
     , "foreign-generic"
+    , "foreign"
+    , "lists"
+    , "maybe"
+    , "partial"
+    , "spec"
+    , "strings"
+    , "transformers"
     ]
 , packages =
     ./packages.dhall
