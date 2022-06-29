@@ -12,15 +12,10 @@ You can edit this file as you like.
     [ "prelude"
     , "aff"
     , "effect"
-    , "either"
-    , "foreign-generic"
-    , "foreign"
-    , "lists"
     , "maybe"
     , "partial"
     , "spec"
     , "strings"
-    , "transformers"
     ]
 , packages =
     ./packages.dhall

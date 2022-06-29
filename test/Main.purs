@@ -1,7 +1,6 @@
 module Test.Main where
 
 import Prelude
-import Data.Either (Either(..))
 import Data.Maybe (Maybe(..), fromJust)
 import Data.String (length)
 import Data.UUID (genUUID, genv3UUID, genv5UUID, parseUUID, toString)
@@ -9,8 +8,6 @@ import Effect (Effect)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Effect.Unsafe (unsafePerformEffect)
-import Control.Monad.Except (runExcept)
-import Foreign.Generic (encode, decode)
 import Partial.Unsafe (unsafePartial)
 import Test.Spec (it, describe)
 import Test.Spec.Assertions (shouldEqual)
@@ -56,7 +53,3 @@ main =
 
             uuid = parseUUID uuidStr
           showUUID `shouldEqual` (show $ unsafePartial $ fromJust uuid)
-        it "`encode >>> decode` returns the uuid unchanged" do
-          let
-            uuid = unsafePerformEffect genUUID
-          runExcept ((encode >>> decode) uuid) `shouldEqual` Right uuid
