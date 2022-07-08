@@ -9,14 +9,8 @@ module Data.UUID
   ) where
 
 import Prelude
-import Control.Monad.Except.Trans (except)
-import Data.Either (note)
-import Data.List.NonEmpty (singleton)
 import Data.Maybe (Maybe(Nothing, Just))
 import Effect (Effect)
-import Foreign (ForeignError(..))
-import Foreign as Foreign
-import Foreign.Class (class Encode, class Decode)
 
 newtype UUID
   = UUID String
@@ -57,12 +51,3 @@ derive instance ordUUID :: Ord UUID
 
 toString :: UUID -> String
 toString (UUID uuid) = uuid
-
-instance decodeUUID :: Decode UUID where
-  decode x = Foreign.readString x >>=
-               parseUUID
-               >>> note (singleton $ ForeignError "Failed to parse foreign UUID")
-               >>> except
-
-instance encodeUUID :: Encode UUID where
-  encode = toString >>> Foreign.unsafeToForeign

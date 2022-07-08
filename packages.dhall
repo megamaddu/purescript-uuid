@@ -1,10 +1,5 @@
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.15.0-20220505/packages.dhall
-        sha256:ba57c25c86fd54c2b672cda3a6836bbbdff4b1bbf946bceaabb64e5a10285638
+      https://github.com/purescript/package-sets/releases/download/psc-0.15.2-20220624/packages.dhall
+        sha256:08989ed9f53e381f879f1b7012ad7684b1ed64d7164c4ad75e306d3210a46c92
 
 in  upstream
-  with foreign-generic =
-    { repo = "https://github.com/working-group-purescript-es/purescript-foreign-generic.git"
-    , dependencies = [ "foreign", "foreign-object", "ordered-collections", "exceptions", "record", "identity" ]
-    , version = "v0.15.0-updates"
-    }
