@@ -7,7 +7,7 @@ You can edit this file as you like.
 , license =
     "MIT"
 , repository =
-    "https://github.com/spicydonuts/purescript-uuid.git"
+    "https://github.com/megamaddu/purescript-uuid.git"
 , dependencies =
     [ "prelude"
     , "aff"
